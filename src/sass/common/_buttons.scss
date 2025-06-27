@@ -1,0 +1,26 @@
+.btn {
+    padding: 6px 8px 4px;
+    border: none;
+    border-radius: 0;
+    font-weight: 500;
+}
+.btn-secondary {
+    background-color: $secondary;
+    color: $white;
+    &:hover {
+        color: $white;
+        background-color: $primary;
+    }
+}
+
+.btn-outline-secondary {
+    background-color: $white;
+    border-color: $secondary;
+    border-style: solid;
+    border-width: 1px 0;
+    color: $secondary;
+    &:hover {
+        color: $white;
+        background-color: $secondary;
+    }
+}

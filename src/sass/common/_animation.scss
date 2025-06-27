@@ -1,0 +1,49 @@
+// 1. Keyframes cho 4 hướng
+@keyframes slideInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-20px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(20px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+// 2. Khung chung cho tất cả element animation
+.animation {
+    opacity: 0;
+    &.animated {
+        // dùng CSS var để thiết lập duration qua class
+        animation-duration: var(--anim-duration, 0.6s);
+        animation-fill-mode: both;
+        animation-timing-function: ease-out;
+    }
+}
+
+// 3. Các lớp định hướng
+.animate-top.animated    { animation-name: slideInDown; }
+.animate-bottom.animated { animation-name: slideInUp; }
+.animate-left.animated   { animation-name: slideInLeft; }
+.animate-right.animated  { animation-name: slideInRight; }
+
+// 4. Các class để set duration (thời gian) qua CSS var
+$durations: (
+        100: 0.1s,
+        300: 0.3s,
+        500: 0.5s,
+        800: 0.8s,
+        1000: 1s,
+        1500: 1.5s
+);
+@each $key, $val in $durations {
+    .duration-#{$key} {
+        --anim-duration: #{$val};
+    }
+}

@@ -1,0 +1,18 @@
+$font-family-rale-way: "Raleway", sans-serif;
+$font-family-cormorant-garamond: "Cormorant Garamond", serif;
+$font-family-base: $font-family-rale-way;
+$font-size-base: 1rem !default;
+$line-height-base: 1.6 !default;
+
+$enable-responsive-font-sizes: true !default;
+$responsive-font-size-scale: 1.2 !default;
+
+// 3. Override các biến cho heading
+//   • Font-family, font-weight, line-height, màu, margin-bottom
+$headings-font-family: $font-family-cormorant-garamond !default;
+$headings-font-weight: 700 !default;
+$headings-line-height: 1.2 !default;
+$headings-color: #111 !default;
+$headings-margin-bottom: $spacer * .75 !default;
+
+

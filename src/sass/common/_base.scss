@@ -1,0 +1,10 @@
+body, html {
+    overflow-x: hidden;
+}
+.home .main-content .module {
+    position: relative;
+    z-index: 1;
+}
+*:focus {
+    box-shadow: none !important;
+}
