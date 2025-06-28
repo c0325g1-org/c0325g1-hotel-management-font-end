@@ -24,12 +24,31 @@
     h1, .h1 {
         font-size: 3rem;
     }
+
+    .booking-form {
+        position: absolute;
+        bottom: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        .booking-form-wrapper {
+            padding: 24px;
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+        }
+    }
 }
 
 @include media-breakpoint-up(md) {
     .mod-banner-slider {
         h1, .h1 {
             font-size: 4rem;
+        }
+
+        .booking-form {
+            .booking-form-wrapper {
+                padding: 32px;
+            }
         }
     }
 }

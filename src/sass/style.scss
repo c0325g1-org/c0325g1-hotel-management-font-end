@@ -44,5 +44,6 @@ $theme-colors: (
 @import 'common/animation';
 @import 'common/lazyload';
 @import 'common/buttons';
+@import 'common/form';
 
 @import "modules/*.scss";
