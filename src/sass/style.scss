@@ -43,7 +43,9 @@ $theme-colors: (
 @import 'common/base';
 @import 'common/animation';
 @import 'common/lazyload';
+@import 'common/slick-theme';
 @import 'common/buttons';
 @import 'common/form';
+@import 'common/custom';
 
 @import "modules/*.scss";

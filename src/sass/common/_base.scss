@@ -1,10 +1,27 @@
 body, html {
     overflow-x: hidden;
 }
-.home .main-content .module {
+.main-content .module {
     position: relative;
     z-index: 1;
 }
 *:focus {
     box-shadow: none !important;
+}
+
+a:not(.btn):not(.nav-link) {
+    text-decoration: none !important;
+    color: inherit !important;
+    transition: all .25s linear;
+    &:not(.social-icon):hover {
+        color: $secondary !important;
+    }
+}
+
+.bg-light-blue {
+    background-color: $light-blue;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+    font-weight: 900;
 }

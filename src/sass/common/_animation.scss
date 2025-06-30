@@ -15,6 +15,10 @@
     from { opacity: 0; transform: translateX(20px); }
     to   { opacity: 1; transform: translateX(0); }
 }
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
 
 // 2. Khung chung cho tất cả element animation
 .animation {
@@ -32,6 +36,7 @@
 .animate-bottom.animated { animation-name: slideInUp; }
 .animate-left.animated   { animation-name: slideInLeft; }
 .animate-right.animated  { animation-name: slideInRight; }
+.animate-fade.animated { animation-name: fadeIn; }
 
 // 4. Các class để set duration (thời gian) qua CSS var
 $durations: (

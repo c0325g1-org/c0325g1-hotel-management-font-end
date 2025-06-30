@@ -5,7 +5,7 @@
             background-color: $white;
         }
         .nav-link {
-            color: $primary;
+            color: $primary !important;
             &:hover {
                 text-shadow: none;
                 color: $secondary;

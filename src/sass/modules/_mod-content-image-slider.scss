@@ -1,0 +1,75 @@
+.mod-content-image-slider {
+    .content-slider-wrapper {
+        background: $primary;
+        z-index: 2;
+        li > img {
+            filter: invert(1);
+        }
+    }
+    .content-slider {
+        .slick-list, .slick-track {
+            height: 100%;
+        }
+    }
+    .image-slider {
+        background: $primary;
+        .slick-list {
+            overflow: visible;
+            max-width: 75%;
+            &:before {
+                content: '';
+                position: absolute;
+                right: 100%;
+                top: 0;
+                bottom: 0;
+                width: 2000px;
+                background: $white;
+                z-index: 1;
+            }
+        }
+        img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
+        }
+        .slick-slide {
+            position: relative;
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: #000;
+                opacity: 0.5;
+                transition: opacity 0.5s ease;
+            }
+            &.slick-active {
+                &:after {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .mod-content-image-slider {
+        .image-slider {
+            img {
+                max-height: 540px;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .mod-content-image-slider {
+        .image-slider {
+            img {
+                max-height: 600px;
+            }
+        }
+    }
+}

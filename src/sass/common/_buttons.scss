@@ -14,7 +14,7 @@
 }
 
 .btn-outline-secondary {
-    background-color: $white;
+    background-color: transparent;
     border-color: $secondary;
     border-style: solid;
     border-width: 1px 0;
@@ -33,5 +33,17 @@
         color: $white;
         background-color: transparent;
         border: 1px solid $white;
+    }
+}
+
+.btn-outline-white {
+    background-color: transparent;
+    border-color: $white;
+    border-style: solid;
+    border-width: 1px 0;
+    color: $white;
+    &:hover {
+        color: $primary;
+        background-color: $white;
     }
 }
