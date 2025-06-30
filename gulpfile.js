@@ -67,7 +67,7 @@ function customScripts() {
 // --- Copy assets khác như icons, slick-css (giữ nguyên) ---
 function copyIcons() {
     return src('node_modules/bootstrap-icons/font/fonts/*')
-        .pipe(dest('dist/fonts'));
+        .pipe(dest('dist/css/fonts'));
 }
 function copySlickCss() {
     return src([

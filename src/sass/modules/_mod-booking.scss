@@ -1,0 +1,27 @@
+.mod-booking {
+    .room-card {
+        margin-bottom: 1.5rem;
+    }
+
+    .room-slider img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .qty-input, .qty-input-selected {
+        width: 60px;
+        text-align: center;
+    }
+
+    .slick-dots {
+        bottom: -25px;
+    }
+
+    .remove-btn {
+        font-size: 0.8rem;
+    }
+    .booking-form {
+        background: $primary;
+    }
+}

@@ -2,20 +2,20 @@
     <div class="banner-slider">
         <div class="slide position-relative">
             <div class="slide-image position-relative w-100vw h-100vh">
-                <img class="position-absolute top-0 left-0 w-100 h-100 object-fit-cover" src="img/slider-banner/hotel-19023.webp" alt="Slide 1">
-            </div>
-            <div class="slide-content text-center">
-                <h1>Hanoi Hotel</h1>
-                <p>Live Oriental Heritage</p>
-            </div>
-        </div>
-        <div class="slide position-relative">
-            <div class="slide-image position-relative w-100vw h-100vh">
                 <img class="position-absolute top-0 left-0 w-100 h-100 object-fit-cover" src="img/slider-banner/hotel-a4.webp" alt="Slide 1">
             </div>
             <div class="slide-content text-center">
                 <h2 class="h1">Hanoi Hotel</h2>
-                <p>Live Oriental Heritage</p>
+                <p class="fs-1 text-uppercase">Live Oriental Heritage</p>
+            </div>
+        </div>
+        <div class="slide position-relative">
+            <div class="slide-image position-relative w-100vw h-100vh">
+                <img class="position-absolute top-0 left-0 w-100 h-100 object-fit-cover" src="img/slider-banner/hotel-19023.webp" alt="Slide 1">
+            </div>
+            <div class="slide-content text-center">
+                <h1>Hanoi Hotel</h1>
+                <p class="fs-1 text-uppercase">Live Oriental Heritage</p>
             </div>
         </div>
         <div class="slide position-relative">
@@ -24,8 +24,55 @@
             </div>
             <div class="slide-content text-center">
                 <h2 class="h1">Hanoi Hotel</h2>
-                <p>Live Oriental Heritage</p>
+                <p class="fs-1 text-uppercase">Live Oriental Heritage</p>
             </div>
+        </div>
+    </div>
+    <div class="booking-form container animation animate-fade">
+        <div class="booking-form-wrapper text-white">
+            <form class="row gx-4 gy-3 align-items-center justify-content-center">
+                <div class="col-6 col-xl-3">
+                    <label for="checkin">Nhận phòng*</label>
+                    <input type="text" id="checkin" class="form-control" placeholder="Ngày nhận phòng" readonly>
+                </div>
+                <div class="col-6 col-xl-3">
+                    <label for="checkout">Trả phòng*</label>
+                    <input type="text" id="checkout" class="form-control" placeholder="Ngày trả phòng" readonly>
+                </div>
+                <div class="col-6 col-xl-2">
+                    <label for="adults">Người lớn*</label>
+                    <select class="form-select" id="adults">
+                        <option value="2" selected>2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <div class="col-6 col-xl-2">
+                    <label for="adults">Trẻ em*</label>
+                    <select class="form-select" id="adults">
+                        <option value="0" selected>0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <div class="col-12 col-xl-2 align-self-end">
+                    <button type="submit" class="btn btn-white w-100">Đặt phòng</button>
+                </div>
+            </form>
         </div>
     </div>
 </section>

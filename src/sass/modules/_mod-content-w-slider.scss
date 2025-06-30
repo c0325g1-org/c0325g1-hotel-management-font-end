@@ -1,0 +1,14 @@
+.mod-content-w-slider {
+    background: $light-blue;
+    .slide-wrapper {
+        &:hover {
+            img {
+                transform: scale(1.1);
+            }
+        }
+    }
+    .media-wrapper {
+        padding-bottom: 133%;
+        margin-bottom: 16px;
+    }
+}
