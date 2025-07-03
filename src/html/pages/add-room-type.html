@@ -1,0 +1,108 @@
+<partial src="admin-header.html"></partial>
+
+<div class="container p-4">
+    <div class="card shadow-sm p-4">
+        <h2 class="mb-4">Nhập thông tin hạng phòng</h2>
+        <form id="roomtypeForm" enctype="multipart/form-data">
+            <div class="row g-3">
+                <!-- Tên phòng -->
+                <div class="col-md-12">
+                    <label for="name" class="form-label">Tên phòng</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+
+                <!-- Slug tự động -->
+                <div class="col-md-12">
+                    <label for="slug" class="form-label">Slug</label>
+                    <input type="text" class="form-control" id="slug" name="slug" readonly>
+                </div>
+
+                <!-- Giá mỗi đêm và hướng -->
+                <div class="col-md-6">
+                    <label for="price_per_night" class="form-label">Giá mỗi đêm (VND)</label>
+                    <input type="number" step="0.01" class="form-control" id="price_per_night" name="price_per_night" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="view_direction" class="form-label">Hướng phòng</label>
+                    <input type="text" class="form-control" id="view_direction" name="view_direction" placeholder="Hướng hồ, phố...">
+                </div>
+
+                <!-- Kích thước và sức chứa -->
+                <div class="col-md-4">
+                    <label for="area" class="form-label">Diện tích (m²)</label>
+                    <input type="number" step="0.01" class="form-control" id="area" name="area">
+                </div>
+                <div class="col-md-4">
+                    <label for="max_adults" class="form-label">Số người lớn tối đa</label>
+                    <input type="number" class="form-control" id="max_adults" name="max_adults" value="2">
+                </div>
+                <div class="col-md-4">
+                    <label for="max_children" class="form-label">Số trẻ em tối đa</label>
+                    <input type="number" class="form-control" id="max_children" name="max_children" value="1">
+                </div>
+                <div class="col-md-6">
+                    <label for="bed_type" class="form-label">Kiểu giường</label>
+                    <input type="text" class="form-control" id="bed_type" name="bed_type" placeholder="1 King, 2 Single...">
+                </div>
+                <div class="col-md-6">
+                    <label for="occupancy" class="form-label">Sức chứa tối đa</label>
+                    <input type="number" class="form-control" id="occupancy" name="occupancy">
+                </div>
+
+                <!-- Mô tả -->
+                <div class="col-12">
+                    <label for="summary" class="form-label">Tóm tắt</label>
+                    <textarea class="form-control" id="summary" name="summary" rows="2"></textarea>
+                </div>
+                <div class="col-12">
+                    <label for="description" class="form-label">Mô tả chi tiết</label>
+                    <textarea class="form-control" id="description" name="description" rows="4"></textarea>
+                </div>
+
+                <!-- File ảnh (chỉ chấp nhận ảnh) -->
+                <div class="col-md-6">
+                    <label for="banner_image" class="form-label">Ảnh Banner</label>
+                    <input type="file" class="form-control" id="banner_image" name="banner_image" accept="image/*" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="thumbnail_image" class="form-label">Ảnh Thumbnail</label>
+                    <input type="file" class="form-control" id="thumbnail_image" name="thumbnail_image" accept="image/*" required>
+                </div>
+                <div class="col-12">
+                    <label for="gallery_images" class="form-label">Ảnh Gallery</label>
+                    <input type="file" class="form-control" id="gallery_images" name="gallery_images[]" accept="image/*" multiple required>
+                </div>
+
+                <!-- Tiện nghi động -->
+                <div class="col-12">
+                    <label class="form-label">Tiện nghi phòng</label>
+                    <div id="amenities-list">
+                        <div class="input-group mb-2">
+                            <input type="text" class="form-control" name="amenities[]" placeholder="Tiện nghi">
+                            <span class="input-group-text remove-btn">&times;</span>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" id="addAmenity">Thêm tiện nghi</button>
+                </div>
+
+                <!-- Đặc điểm động -->
+                <div class="col-12">
+                    <label class="form-label">Đặc điểm phòng</label>
+                    <div id="features-list">
+                        <div class="input-group mb-2">
+                            <input type="text" class="form-control" name="features[]" placeholder="Đặc điểm">
+                            <span class="input-group-text remove-btn">&times;</span>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" id="addFeature">Thêm đặc điểm</button>
+                </div>
+
+            </div>
+            <div class="mt-4 text-end">
+                <button type="submit" class="btn btn-primary">Lưu hạng phòng</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<partial src="admin-footer.html"></partial>

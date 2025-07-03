@@ -1,0 +1,14 @@
+.sidebar {
+    .nav-pills .nav-link.active,
+    .nav-pills .nav-link:hover,
+    .nav-pills .show > .nav-link {
+        background: $secondary;
+    }
+    .collapse:not(.show) {
+        display: none !important;
+    }
+}
+
+.sidebar, .offcanvas {
+    background: $primary;
+}

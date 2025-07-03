@@ -14,8 +14,11 @@ const paths = {
     html:      'src/html/pages/*.html',
     partials:  'src/html/partials/',
     scss:      'src/sass/**/*.scss',
+    scssClient: 'src/sass/style.scss',
+    scssAdmin:    'src/sass/style-admin.scss',
     // Thư mục chứa file JS custom
     customJs:  'src/js/app.js',
+    customAdminJs:  'src/js/admin-app.js',
     // Các file vendor bạn cần
     vendorJs: [
         'node_modules/jquery/dist/jquery.min.js',
@@ -36,7 +39,7 @@ function html() {
 
 // --- Styles (nếu cần quietDeps như trước) ---
 function styles() {
-    return src(paths.scss)
+    return src(paths.scssClient)
         .pipe(sassGlob())
         .pipe(sass({ quietDeps: true, logger: { warn: () => {} } }).on('error', sass.logError))
         .pipe(concat('style.css'))
@@ -93,6 +96,26 @@ function copyImages() {
         .pipe(dest('dist/img'));
 }
 
+function adminStyles() {
+    return src(paths.scssAdmin)
+        .pipe(sassGlob())
+        .pipe(sass({ quietDeps: true, logger: { warn: () => {} } }).on('error', sass.logError))
+        .pipe(concat('style-admin.css'))
+        .pipe(dest('dist/css'))
+        .pipe(browserSync.stream());
+}
+
+function customAdminScripts() {
+    return browserify({ entries: 'src/js/admin-app.js', debug: true })
+        .transform(babelify, { presets: ['@babel/preset-env'] })
+        .bundle()
+        .pipe(source('admin-app.min.js'))
+        .pipe(buffer())
+        .pipe(uglify())
+        .pipe(dest('dist/js'))
+        .pipe(browserSync.stream());
+}
+
 // --- Dev server + watch ---
 function serve() {
     browserSync.init({ server: 'dist' });
@@ -100,8 +123,11 @@ function serve() {
     watch('src/img/**/*', copyImages);
     watch(paths.html, html);
     watch(paths.scss, styles);
+    watch(paths.scss, adminStyles);
     watch(paths.customJs, customScripts);
     watch('src/js/**/*.js', customScripts);
+    watch(paths.customAdminJs, customAdminScripts);
+    watch('src/js/**/*.js', customAdminScripts);
 }
 
 exports.build = series(
@@ -113,7 +139,9 @@ exports.build = series(
         copySlickAssets,
         copyImages,
         vendorScripts,
-        customScripts
+        customScripts,
+        adminStyles,
+        customAdminScripts
     )
 );
 exports.default = series(exports.build, serve);
