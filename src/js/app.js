@@ -3,6 +3,7 @@ import {initHeader} from './modules/header.js';
 import { initOnScrollAnimation } from './modules/animations.js';
 import { initLazyLoad } from './modules/lazyload.js';
 import { initBookingForm } from './modules/booking-form';
+import { initPageBooking } from "./modules/page-booking";
 
 window.addEventListener("load", (event) => {
     initHeader();
@@ -80,5 +81,6 @@ window.addEventListener("load", (event) => {
         nextArrow: '<button type="button" class="slick-next"><i class="bi bi-chevron-right"></i></button>',
     });
     initBookingForm();
+    initPageBooking();
     // nếu có thêm module khác, chỉ việc import & gọi ở đây
 });

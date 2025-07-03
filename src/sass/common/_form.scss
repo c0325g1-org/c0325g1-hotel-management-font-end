@@ -12,8 +12,11 @@
     color: inherit;
     &:focus {
         background-color: transparent;
-        color: $primary;
+        color: inherit;
         border-color: $white;
+        option {
+            color: $primary;
+        }
     }
 }
 

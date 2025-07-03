@@ -5,11 +5,12 @@
     <div class="banner-slider">
         <div class="slide position-relative">
             <div class="slide-image position-relative w-100vw h-100vh">
-                <img class="position-absolute top-0 left-0 w-100 h-100 object-fit-cover" src="img/slider-banner/hotel-a4.webp" alt="Slide 1">
+                <img class="position-absolute top-0 left-0 w-100 h-100 object-fit-cover"
+                     src="img/slider-banner/hotel-a4.webp" alt="Slide 1">
             </div>
             <div class="slide-content text-center">
                 <h2 class="h1">Hanoi Hotel</h2>
-                <p class="fs-1 text-uppercase">Live Oriental Heritage</p>
+                <p class="fs-1 text-uppercase">Booking online</p>
             </div>
         </div>
     </div>
@@ -18,15 +19,30 @@
     <div class="booking-form container py-5 text-white">
         <div class="booking-form-wrapper px-md-3">
             <form class="row gx-4 gy-3 align-items-center justify-content-center">
-                <div class="col-6 col-xl-3">
+                <div class="col-6 col-xl-2">
                     <label for="checkin">Nhận phòng*</label>
                     <input type="text" id="checkin" class="form-control" placeholder="Ngày nhận phòng" readonly>
                 </div>
-                <div class="col-6 col-xl-3">
+                <div class="col-6 col-xl-2">
                     <label for="checkout">Trả phòng*</label>
                     <input type="text" id="checkout" class="form-control" placeholder="Ngày trả phòng" readonly>
                 </div>
-                <div class="col-6 col-xl-2">
+                <div class="col-4 col-xl-2">
+                    <label for="quantity">Số phòng*</label>
+                    <select class="form-select" id="quantity">
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <div class="col-4 col-xl-2">
                     <label for="adults">Người lớn*</label>
                     <select class="form-select" id="adults">
                         <option value="2" selected>2</option>
@@ -40,7 +56,7 @@
                         <option value="10">10</option>
                     </select>
                 </div>
-                <div class="col-6 col-xl-2">
+                <div class="col-4 col-xl-2">
                     <label for="adults">Trẻ em*</label>
                     <select class="form-select" id="adults">
                         <option value="0" selected>0</option>
@@ -64,62 +80,71 @@
     </div>
     <div class="container py-4">
         <div class="row">
+            <!-- Available rooms list -->
             <div class="col-12 col-md-8">
                 <h4 class="mb-4">Danh sách phòng</h4>
                 <div id="rooms-list">
-                    <div class="room-card card" data-id="1" data-name="Premium Executive Suite" data-max="5">
+                    <!-- Sample room cards -->
+                    <div class="room-card card mb-3" data-id="1" data-name="Premium Executive Suite"
+                         data-price="4000000" data-available="5" data-max-adults="2" data-max-children="1">
                         <div class="card-body">
                             <div class="row align-items-center">
-                                <div class="col-12 col-sm-5">
+                                <div class="col-sm-5">
                                     <div class="room-slider">
-                                        <div><img src="https://placehold.co/600x400" alt="Room Image"></div>
-                                        <div><img src="https://placehold.co/600x400" alt="Room Image"></div>
-                                        <div><img src="https://placehold.co/600x400" alt="Room Image"></div>
+                                        <div><img src="https://placehold.co/600x400?text=Suite+1" class="img-fluid"
+                                                  alt="Suite Image"></div>
+                                        <div><img src="https://placehold.co/600x400?text=Suite+2" class="img-fluid"
+                                                  alt="Suite Image"></div>
+                                        <div><img src="https://placehold.co/600x400?text=Suite+3" class="img-fluid"
+                                                  alt="Suite Image"></div>
                                     </div>
                                 </div>
-                                <div class="col-12 col-sm-7 mt-3 mt-sm-0">
-                                    <h5 class="card-title h3">Premium Executive Suite</h5>
-                                    <p class="mb-1">Số phòng còn trống: <strong>5</strong></p>
-                                    <div class="d-flex align-items-center mb-2">
-                                        <button class="btn btn-secondary btn-sm decrement">-</button>
-                                        <input type="number" class="qty-input mx-2" value="1" min="1" max="5">
-                                        <button class="btn btn-secondary btn-sm increment">+</button>
+                                <div class="col-sm-7 mt-3 mt-sm-0 d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h5 class="card-title h5">Premium Executive Suite</h5>
+                                        <p class="mb-1">Giá/ngày: <strong>4.000.000₫</strong></p>
+                                        <p class="mb-1">Còn trống: <strong>5</strong></p>
+                                        <p class="mb-0">Sức chứa: 2 Người lớn, 1 Trẻ em</p>
                                     </div>
-                                    <button class="btn btn-primary add-btn">Thêm</button>
+                                    <button class="btn btn-primary select-room-btn">Chọn</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="room-card card" data-id="2" data-name="Premium Deluxe Suite" data-max="5">
+                    <div class="room-card card mb-3" data-id="2" data-name="Premium Deluxe Suite" data-price="3500000"
+                         data-available="3" data-max-adults="2" data-max-children="1">
                         <div class="card-body">
                             <div class="row align-items-center">
-                                <div class="col-12 col-sm-5">
+                                <div class="col-sm-5">
                                     <div class="room-slider">
-                                        <div><img src="https://placehold.co/600x400" alt="Room Image"></div>
-                                        <div><img src="https://placehold.co/600x400" alt="Room Image"></div>
-                                        <div><img src="https://placehold.co/600x400" alt="Room Image"></div>
+                                        <div><img src="https://placehold.co/600x400?text=Deluxe+1" class="img-fluid"
+                                                  alt="Suite Image"></div>
+                                        <div><img src="https://placehold.co/600x400?text=Deluxe+2" class="img-fluid"
+                                                  alt="Suite Image"></div>
+                                        <div><img src="https://placehold.co/600x400?text=Deluxe+3" class="img-fluid"
+                                                  alt="Suite Image"></div>
                                     </div>
                                 </div>
-                                <div class="col-12 col-sm-7 mt-3 mt-sm-0">
-                                    <h5 class="card-title h3">Premium Deluxe Suite</h5>
-                                    <p class="mb-1">Số phòng còn trống: <strong>5</strong></p>
-                                    <div class="d-flex align-items-center mb-2">
-                                        <button class="btn btn-secondary btn-sm decrement">-</button>
-                                        <input type="number" class="qty-input mx-2" value="1" min="1" max="5">
-                                        <button class="btn btn-secondary btn-sm increment">+</button>
+                                <div class="col-sm-7 mt-3 mt-sm-0 d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h5 class="card-title h5">Premium Deluxe Suite</h5>
+                                        <p class="mb-1">Giá/ngày: <strong>3.500.000₫</strong></p>
+                                        <p class="mb-1">Còn trống: <strong>3</strong></p>
+                                        <p class="mb-0">Sức chứa: 2 Người lớn, 1 Trẻ em</p>
                                     </div>
-                                    <button class="btn btn-primary add-btn">Thêm</button>
+                                    <button class="btn btn-primary select-room-btn">Chọn</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Selected room summary -->
             <div class="col-12 col-md-4">
                 <h4 class="mb-4">Phòng đã chọn</h4>
-                <ul class="list-group" id="selected-list">
-                </ul>
-                <button id="booking-btn" class="btn btn-primary mt-3 w-100">Đặt phòng</button>
+                <div id="selected-summary" class="card p-3">
+                    <p>Chưa có phòng nào được chọn</p>
+                </div>
             </div>
         </div>
     </div>
