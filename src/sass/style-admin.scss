@@ -1,0 +1,42 @@
+// Bootstrap’s core functions & variables
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/maps";
+@import "node_modules/bootstrap/scss/mixins";
+
+// Override variables
+@import "common/variables-admin";
+
+$primary:    #102348;
+$secondary:  #A18348;
+$success:    #28a745;
+$info:       #17a2b8;
+$warning:    #ffc107;
+$danger:     #dc3545;
+$light:      #f8f9fa;
+$dark:       #343a40;
+
+$theme-colors: (
+        "primary":   $primary,
+        "secondary": $secondary,
+        "success":   $success,
+        "info":      $info,
+        "warning":   $warning,
+        "danger":    $danger,
+        "light":     $light,
+        "dark":      $dark
+);
+
+// Bootstrap code
+@import "node_modules/bootstrap/scss/bootstrap";
+
+// Bootstrap Icons
+@import "node_modules/bootstrap-icons/font/bootstrap-icons";
+
+// Flatpickr
+@import "node_modules/flatpickr/dist/flatpickr";
+
+@import 'common/base';
+@import 'common/custom';
+
+@import 'admin/*.scss';
